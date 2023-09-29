@@ -3,7 +3,7 @@ import requests
 import json
 import pandas as pd
 
-page = st.sidebar.selectbox('Choose your page', ['users', 'シラバス登録', 'bookings'])
+page = st.sidebar.selectbox('Choose your page', ['users', 'シラバス登録', 'シラバス確認'])
 
 if page == 'users':
     st.title('ユーザー登録画面')
@@ -23,7 +23,7 @@ if page == 'users':
             st.json(res.json())
 
 
-elif page == 'シラバス':
+elif page == 'シラバス確認':
     st.title('シラバス確認')
     # シラバス一覧の取得
     url_lectures = 'https://api-reserve-6grf.onrender.com/read_lecture'
