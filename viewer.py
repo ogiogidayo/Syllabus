@@ -26,12 +26,11 @@ if page == 'users':
 elif page == 'シラバス一覧':
     st.title('シラバス一覧')
     # シラバス一覧の取得
-    url_lectures = 'https://api-reserve-6grf.onrender.com/read_lecture'
+    url_lectures = 'https://syllabus-api-i5xd.onrender.com/read_lecture'
     res = requests.get(url_lectures)
     lectures = res.json()
-    lectures
-    # df_lectures = pd.json_normalize(lectures)
-    # df_lectures
+    df_lectures = pd.json_normalize(lectures)
+    df_lectures
 
 
 elif page == 'シラバス登録':
