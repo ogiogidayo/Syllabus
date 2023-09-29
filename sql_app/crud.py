@@ -1,4 +1,4 @@
-from sqlalchemy.orm import  Session
+from sqlalchemy.orm import Session
 from . import models, schemas
 
 #User一覧取得
@@ -22,8 +22,8 @@ def create_lecture(db: Session, lecture: schemas.Lecture):
     db_lecture = models.Lecture(
         user_id = lecture.user_id,
         lecture_name = lecture.lecture_name,
-        lecture_tech=lecture.lecture_tech,
-        lecture_info=lecture.lecture_info
+        lecture_tech = lecture.lecture_tech,
+        lecture_info = lecture.lecture_info
     )
     db.add(db_lecture)
     db.commit()

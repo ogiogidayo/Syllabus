@@ -19,7 +19,7 @@ if page == 'users':
             data=json.dumps(data)
         )
         if res.status_code == 200:
-            st.success('ユーザー登録完了!')
+            st.success('ユーザー登録完了')
             st.json(res.json())
 
 
@@ -29,8 +29,9 @@ elif page == 'シラバス一覧':
     url_lectures = 'https://api-reserve-6grf.onrender.com/read_lecture'
     res = requests.get(url_lectures)
     lectures = res.json()
-    df_lectures = pd.json_normalize(lectures)
-    df_lectures
+    lectures
+    # df_lectures = pd.json_normalize(lectures)
+    # df_lectures
 
 
 elif page == 'シラバス登録':
