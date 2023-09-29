@@ -28,15 +28,15 @@ elif page == 'シラバス確認':
     # シラバス一覧の取得
     url_lectures = 'https://api-reserve-6grf.onrender.com/read_lecture'
     res = requests.get(url_lectures)
-    lectures = res.json()
+    res.json()
     # lecture_name = {}
     # for lecture in lectures:
     #     lecture_name[lecture['lecture_name']] = {
     #         'lecture_tech': lecture['lecture_tech'],
     #         'lecture_info': lecture['lecture_info']
     #     }
-    st.write(lectures)
-    df_rooms = pd.DataFrame(lectures)
+    #st.write(lectures)
+    #df_rooms = pd.DataFrame(lectures)
     #df_rooms.columns = ['会議室名', '定員', '会議室ID']
     st.table(df_rooms)
 
