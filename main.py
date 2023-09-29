@@ -1,4 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
+from sqlalchemy.orm import Session
+from sql_app import crud, models, schemas
+from sql_app.database import engine, SessionLocal
 from typing import List
 
 app = FastAPI()
