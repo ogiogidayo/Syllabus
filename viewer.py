@@ -66,7 +66,7 @@ elif page == 'シラバス登録':
             'lecture_info': lecture_info,
             'user_id': user_id
         }
-        # 会議室予約
+        # シラバス登録
         url = 'https://syllabus-api-i5xd.onrender.com/create_lecture'
         try:
             res = requests.post(
@@ -76,5 +76,5 @@ elif page == 'シラバス登録':
         except KeyError:
             st.text('エラー')
         if res.status_code == 200:
-                st.success('会議室登録完了')
+                st.success('シラバス登録完了')
                 st.json(res.json())
