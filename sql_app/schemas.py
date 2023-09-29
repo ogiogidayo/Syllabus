@@ -17,10 +17,10 @@ class LectureCreate(BaseModel):
     lecture_name: str = Field(max_length=15)
     lecture_tech: str
     lecture_info: str
+    user_id: int
     #date_update: datetime.datetime
 
 class Lecture(LectureCreate):
-    user_id: int
     lecture_id: int
     #date_update: datetime.datetime
 
