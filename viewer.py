@@ -51,7 +51,7 @@ elif page == 'シラバス登録':
         users_dict[user['username']] = user['user_id']
 
     with st.form(key='syllabus'):
-        username: str = st.text_input('ユーザー名')
+        username: str = st.text_input('ユーザー名(登録済みのもの)')
         lecture_name: str = st.text_input('講義名', max_chars=30)
         lecture_tech: str = st.text_input('教員名', max_chars=20)
         lecture_info: str = st.text_area('講義情報', max_chars=200)
