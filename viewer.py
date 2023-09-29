@@ -30,7 +30,7 @@ elif page == 'シラバス一覧':
     res = requests.get(url_lectures)
     lectures = res.json()
     df_lectures = pd.json_normalize(lectures)
-    st.write(df_lectures)
+    df_lectures
 
 
 elif page == 'シラバス登録':
