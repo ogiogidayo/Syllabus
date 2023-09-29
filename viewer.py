@@ -30,8 +30,7 @@ elif page == 'シラバス一覧':
     url_lectures = 'https://api-reserve-6grf.onrender.com/lecture'
     res = requests.get(url_lectures)
     df = pd.DataFrame(res.json())
-    #df_rooms.columns = ['会議室名', '定員', '会議室ID']
-    st.table(df)
+    st.write(df)
 
 elif page == 'シラバス登録':
     st.title('シラバス登録画面')
