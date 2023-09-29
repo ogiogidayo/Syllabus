@@ -29,8 +29,8 @@ elif page == 'シラバス一覧':
     url_lectures = 'https://api-reserve-6grf.onrender.com/read_lecture'
     res = requests.get(url_lectures)
     lectures = res.json()
-    df_lectures = pd.DataFrame(lectures)
-    st.table(df_lectures)
+    df_lectures = pd.json_normalize(lectures)
+    st.write(df_lectures)
 
 
 elif page == 'シラバス登録':
