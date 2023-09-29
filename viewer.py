@@ -30,6 +30,7 @@ elif page == 'シラバス一覧':
     res = requests.get(url_lectures)
     lectures = res.json()
     df_lectures = pd.json_normalize(lectures)
+    df_lectures = ['講義名', '担当教員', '講義情報', '更新者ID', '識別ID']
     df_lectures
 
 
