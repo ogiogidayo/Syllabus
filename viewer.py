@@ -27,7 +27,7 @@ if page == 'users':
 elif page == 'シラバス一覧':
     st.title('シラバス一覧')
     # シラバス一覧の取得
-    url_lectures = 'https://api-reserve-6grf.onrender.com/read_lecture'
+    url_lectures = 'https://api-reserve-6grf.onrender.com/lecture'
     res = requests.get(url_lectures)
     df = pd.DataFrame(res.json())
     #df_rooms.columns = ['会議室名', '定員', '会議室ID']
@@ -60,7 +60,7 @@ elif page == 'シラバス登録':
             'user_id': user_id
         }
         # シラバス登録
-        url = 'https://syllabus-api-i5xd.onrender.com/create_lecture'
+        url = 'https://syllabus-api-i5xd.onrender.com/lecture'
         try:
             res = requests.post(
             url,
