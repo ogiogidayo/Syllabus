@@ -24,7 +24,7 @@ if page == 'users':
 
 
 elif page == 'シラバス確認':
-    st.title('シラバス確認')
+    st.title('シラバス')
     # シラバス一覧の取得
     url_lectures = 'https://api-reserve-6grf.onrender.com/read_lecture'
     res = requests.get(url_lectures)
