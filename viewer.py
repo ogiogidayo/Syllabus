@@ -19,7 +19,7 @@ if page == 'users':
             data=json.dumps(data)
         )
         if res.status_code == 200:
-            st.success('ユーザー登録完了')
+            st.success('ユーザー登録完了!')
             st.json(res.json())
 
 
