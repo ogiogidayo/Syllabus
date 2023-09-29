@@ -13,4 +13,4 @@ class Lecture(Base):
     lecture_name = Column(String, unique=True, index=True)
     lecture_tech = Column(String, unique=True, index=True)
     lecture_info = Column(String, unique=False, index=True)
-    date_update = Column(DateTime)
+    #date_update = Column(DateTime)
