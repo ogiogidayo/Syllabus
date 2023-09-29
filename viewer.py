@@ -1,5 +1,4 @@
 import streamlit as st
-import datetime
 import requests
 import json
 import pandas as pd
@@ -10,10 +9,7 @@ if page == 'users':
     st.title('ユーザー登録画面')
     with st.form(key='user'):
         username: str = st.text_input('ユーザー名', max_chars=12)
-        data = {
-            # 'user_id': user_id,
-            'username': username
-        }
+        data = {'username': username}
         submit_button = st.form_submit_button(label='ユーザー登録')
 
     if submit_button:
@@ -55,7 +51,7 @@ elif page == 'シラバス登録':
         users_dict[user['username']] = user['user_id']
 
     with st.form(key='syllabus'):
-        username: str = st.text_input('ユーザーid')
+        username: str = st.text_input('ユーザー名')
         lecture_name: str = st.text_input('講義名', max_chars=30)
         lecture_tech: str = st.text_input('教員名', max_chars=20)
         lecture_info: str = st.text_area('講義情報', max_chars=200)
@@ -72,13 +68,13 @@ elif page == 'シラバス登録':
         }
         # 会議室予約
         url = 'https://syllabus-api-i5xd.onrender.com/create_lecture'
-        res = requests.post(
+        try:
+            res = requests.post(
             url,
             data=json.dumps(data)
-        )
+            )
+        except KeyError:
+            st.text('エラー')
         if res.status_code == 200:
-            st.success('会議室登録完了')
-            st.json(res.json())
-        else:
-            st.error(f'エラーステータスコード: {res.status_code}')
-            st.text(res.text)  # エラーレスポンス全体を表示
+                st.success('会議室登録完了')
+                st.json(res.json())
