@@ -1,10 +1,11 @@
 from fastapi import FastAPI
+from typing import List
 
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
+@app.get("/uses")
+async def read_users(skip: int = 0, limit = 100):
     return {"message": "Hello World"}
 
 
