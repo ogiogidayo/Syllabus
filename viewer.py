@@ -1,4 +1,3 @@
-import pandas
 import streamlit as st
 import requests
 import json
@@ -20,17 +19,18 @@ if page == 'users':
             data=json.dumps(data)
         )
         if res.status_code == 200:
-            st.success('ユーザー登録完了!')
+            st.success('ユーザー登録完了')
             st.json(res.json())
 
 
 elif page == 'シラバス一覧':
     st.title('シラバス一覧')
     # シラバス一覧の取得
-    url_lectures = 'https://api-reserve-6grf.onrender.com/lecture'
+    url_lectures = 'https://api-reserve-6grf.onrender.com/read_lecture'
     res = requests.get(url_lectures)
     df = pd.DataFrame(res.json())
-    st.write(df)
+    #df_rooms.columns = ['会議室名', '定員', '会議室ID']
+    st.table(df)
 
 elif page == 'シラバス登録':
     st.title('シラバス登録画面')
@@ -59,7 +59,7 @@ elif page == 'シラバス登録':
             'user_id': user_id
         }
         # シラバス登録
-        url = 'https://syllabus-api-i5xd.onrender.com/lecture'
+        url = 'https://syllabus-api-i5xd.onrender.com/create_lecture'
         try:
             res = requests.post(
             url,
