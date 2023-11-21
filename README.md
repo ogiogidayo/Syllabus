@@ -1,4 +1,4 @@
-# Syllabus_API
+# Syllabus_App
 ChatGPTで生成
 このプロジェクトはPythonで作成されたRESTful APIでCRUD操作を提供し、シラバスデータの作成、読み取り、更新、削除を行うことができます。
 
